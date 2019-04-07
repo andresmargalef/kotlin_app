@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:gravity="center"
+            tools:layout_editor_absoluteY="34dp" tools:layout_editor_absoluteX="75dp" android:id="@+id/search"
+            android:hint="@android:string/search_go" tools:ignore="MissingConstraints"/>
+    <Button
+            android:text="search text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            tools:layout_editor_absoluteY="157dp"
+            tools:layout_editor_absoluteX="149dp" android:id="@+id/search_button" tools:ignore="MissingConstraints"/>
+</LinearLayout>
