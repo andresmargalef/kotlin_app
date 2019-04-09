@@ -2,9 +2,11 @@ package com.example.pojo
 
 import android.os.Parcel
 import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
 
 class ItemDescription() : Parcelable {
     var text: String? = null
+    @SerializedName("plain_text")
     var plainText: String? = null
 
     constructor(parcel: Parcel) : this() {
