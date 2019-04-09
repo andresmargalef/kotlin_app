@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.support.v4.content.ContextCompat.startActivity
 import android.widget.Button
 import android.widget.EditText
-import com.example.`interface`.SearchInterface
+import com.example.`interface`.ApiInterface
 import com.example.pojo.Results
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
@@ -15,7 +15,7 @@ import io.reactivex.schedulers.Schedulers
 
 class MainActivity : AppCompatActivity() {
     val searchInterface by lazy {
-        SearchInterface.create()
+        ApiInterface.createSearchInterface()
     }
     var disposable: Disposable? = null
 

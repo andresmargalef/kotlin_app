@@ -17,6 +17,7 @@ import com.squareup.picasso.Picasso
  */
 
 class RecyclerAdapter(private var items: ArrayList<ItemDetail>): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+    var onItemClick: ((ItemDetail) -> Unit)? = null
 
     override fun getItemCount(): Int {
         return items.size
@@ -26,7 +27,7 @@ class RecyclerAdapter(private var items: ArrayList<ItemDetail>): RecyclerView.Ad
         val searchDto = items[position]
         p0.titleSearch?.text = searchDto.title
         p0.priceSearch?.text = "$ ${searchDto.price.toString()}"
-        Picasso.with(p0.itemView.context).load(searchDto.thumbnail).into(p0.searchImage);
+        Picasso.with(p0.itemView.context).load(searchDto.thumbnail).into(p0.searchImage)
     }
 
     override fun onCreateViewHolder(p0: ViewGroup, viewType: Int): ViewHolder {
@@ -36,7 +37,7 @@ class RecyclerAdapter(private var items: ArrayList<ItemDetail>): RecyclerView.Ad
         return ViewHolder(itemView)
     }
 
-    class ViewHolder(row: View) : RecyclerView.ViewHolder(row) {
+    inner class ViewHolder(row: View) : RecyclerView.ViewHolder(row) {
         var titleSearch: TextView? = null
         var priceSearch: TextView? = null
 
@@ -46,6 +47,9 @@ class RecyclerAdapter(private var items: ArrayList<ItemDetail>): RecyclerView.Ad
             this.titleSearch = row.findViewById(R.id.item_title)
             this.priceSearch = row.findViewById(R.id.item_price)
             this.searchImage = row.findViewById(R.id.item_thumbnail)
+            itemView.setOnClickListener {
+                onItemClick?.invoke(items[adapterPosition])
+            }
         }
     }
 }
