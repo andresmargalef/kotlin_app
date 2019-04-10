@@ -13,7 +13,7 @@ class SearchActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
         val searchRecycler = findViewById<RecyclerView>(R.id.search_list)
-        var items = intent.getParcelableArrayListExtra<ItemDetail>("items")
+        val items = intent.getParcelableArrayListExtra<ItemDetail>("items")
 
         searchRecycler.layoutManager = LinearLayoutManager(this)
         searchRecycler.adapter = RecyclerAdapter(items)
