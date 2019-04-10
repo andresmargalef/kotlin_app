@@ -1,4 +1,4 @@
-package com.bett.kotlinrecyclerview.adapters
+package com.example.adapters
 
 import android.net.Uri
 import android.support.v7.widget.RecyclerView
