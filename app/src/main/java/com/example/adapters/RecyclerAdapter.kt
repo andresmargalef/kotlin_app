@@ -13,7 +13,6 @@ import com.squareup.picasso.Picasso
 
 
 /**
- * Created by bett on 8/26/17.
  */
 
 class RecyclerAdapter(private var items: ArrayList<ItemDetail>): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
