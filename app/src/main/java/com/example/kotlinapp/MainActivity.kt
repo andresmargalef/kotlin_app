@@ -14,7 +14,7 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
 class MainActivity : AppCompatActivity() {
-    val searchInterface by lazy {
+    private val searchInterface by lazy {
         SearchInterface.create()
     }
     var disposable: Disposable? = null
@@ -54,13 +54,10 @@ class MainActivity : AppCompatActivity() {
         val error = s
     }
 
-    companion object {
-
-        fun goToSearchResultActivity(context: Context, model: Results) {
-            val intent = Intent(context, SearchActivity::class.java)
-            intent.putParcelableArrayListExtra("items", model.results)
-            startActivity(context, intent, null)
-        }
+    fun goToSearchResultActivity(context: Context, model: Results) {
+        val intent = Intent(context, SearchActivity::class.java)
+        intent.putParcelableArrayListExtra("items", model.results)
+        startActivity(context, intent, null)
     }
 
 }
